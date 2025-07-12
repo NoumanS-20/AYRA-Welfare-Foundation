@@ -12,25 +12,7 @@ const Impact = () => {
     organizations: 15
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
-          setIsVisible(true);
-          animateCounters();
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [isVisible]);
-
-  const animateCounters = () => {
+  const animateCounters = React.useCallback(() => {
     const duration = 2000;
     const steps = 50;
     const stepDuration = duration / steps;
@@ -52,7 +34,25 @@ const Impact = () => {
         setCounts(finalCounts);
       }
     }, stepDuration);
-  };
+  }, [finalCounts]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+          animateCounters();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible, animateCounters]);
 
   return (
     <section id="impact" ref={sectionRef} className="py-20 bg-gray-900 text-white">

@@ -27,7 +27,7 @@ const Contact = () => {
       .then(() => {
         setStatusMessage('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
-      }, (error: any) => {
+      }, (error: { text: string }) => {
         setStatusMessage('Failed to send message. Please try again later. Error: ' + error.text);
         console.error('EmailJS error:', error);
       });

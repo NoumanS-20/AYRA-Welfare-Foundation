@@ -1,5 +1,4 @@
 import React from 'react';
-import { Heart, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -22,15 +21,12 @@ const Footer = () => {
             </p>
             <div className="space-y-2 text-sm text-gray-400">
               <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4" />
                 <span>ayrwelfarefoundation@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
                 <span>7007815129</span>
               </div>
               <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4" />
                 <span>Lucknow</span>
               </div>
             </div>

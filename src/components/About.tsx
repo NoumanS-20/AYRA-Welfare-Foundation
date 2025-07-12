@@ -17,13 +17,13 @@ const About = () => {
           {images.map((image, index) => (
             <div 
               key={index}
-              className="aspect-[4/3] rounded-lg overflow-hidden hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-2xl hover:rotate-1 animate-fade-in-up group cursor-pointer transform hover:-translate-y-2"
+              className="aspect-[4/3] rounded-lg overflow-hidden hover:scale-110 transition-all duration-700 shadow-lg hover:shadow-2xl hover:rotate-3 animate-fade-in-up group cursor-pointer transform hover:-translate-y-3 hover:brightness-110"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <img 
                 src={image} 
                 alt={`AYRA educational activity ${index + 1}`}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 group-hover:brightness-110"
+                className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700 group-hover:brightness-125"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
