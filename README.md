@@ -196,9 +196,9 @@ We welcome contributions to improve the AYRA Foundation website! Here's how you 
 ## 📞 Contact & Support
 
 ### Get in Touch
-- **Email**: ayrwelfarefoundation@gmail.com
-- **Phone**: +1 (555) 123-4567
-- **Address**: 123 Community Street, City, State 12345
+- **Email**: ayrawelfarefoundation@gmail.com
+- **Phone**: 7007815129
+- **Address**: Lucknow
 - **Social**: @ayrwelfarefoundation
 
 ### Technical Support
@@ -209,16 +209,10 @@ For website issues or feature requests, please:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 🙏 Acknowledgments
 
 - **Design Inspiration**: Modern non-profit websites
-- **Images**: Pexels and AYRA Foundation archives
+- **Images**: AYRA Foundation archives
 - **Icons**: Lucide React icon library
 - **Fonts**: System fonts for optimal performance
 
@@ -239,5 +233,4 @@ If you find this project helpful, please consider:
   <p><strong>Made with ❤️ for AYRA Welfare Foundation</strong></p>
   <p><em>Empowering children, one line of code at a time</em></p>
   
-  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/your-username/ayra-foundation-website)
-</div>
+  
