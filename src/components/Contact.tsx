@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Instagram } from 'lucide-react';
+import { send } from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,12 +9,28 @@ const Contact = () => {
     message: ''
   });
 
+  const [statusMessage, setStatusMessage] = useState('');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatusMessage('Please fill in all fields.');
+      return;
+    }
+
+    const serviceID = 'YOUR_EMAILJS_SERVICE_ID';
+    const templateID = 'YOUR_EMAILJS_TEMPLATE_ID';
+    const userID = 'YOUR_EMAILJS_USER_ID';
+
+    send(serviceID, templateID, formData, userID)
+      .then(() => {
+        setStatusMessage('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
+      }, (error: any) => {
+        setStatusMessage('Failed to send message. Please try again later. Error: ' + error.text);
+        console.error('EmailJS error:', error);
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -41,7 +58,7 @@ const Contact = () => {
                 <Mail className="h-6 w-6 text-[#7fb3d3] mt-1" />
                 <div>
                   <h4 className="font-semibold text-[#b8d4e3]">Email</h4>
-                  <p className="text-[#7fb3d3]">ayrwelfarefoundation@gmail.com</p>
+                  <p className="text-[#7fb3d3]">ayrawelfarefoundation@gmail.com</p>
                 </div>
               </div>
               
@@ -57,7 +74,7 @@ const Contact = () => {
                 <MapPin className="h-6 w-6 text-[#7fb3d3] mt-1" />
                 <div>
                   <h4 className="font-semibold text-[#b8d4e3]">Address</h4>
-                  <p className="text-[#7fb3d3]">123 Community Street<br />City, State 12345</p>
+                  <p className="text-[#7fb3d3]">Lucknow</p>
                 </div>
               </div>
             </div>
@@ -66,7 +83,7 @@ const Contact = () => {
               <h4 className="font-semibold text-[#b8d4e3] mb-4">Follow us</h4>
               <p className="text-[#7fb3d3] flex items-center space-x-2">
                 <Instagram className="h-5 w-5" />
-                <span>@ayrwelfarefoundation</span>
+                <span>@ayrawelfarefoundation</span>
               </p>
             </div>
           </div>
@@ -126,6 +143,9 @@ const Contact = () => {
                 <span>Send Message</span>
               </button>
             </form>
+            {statusMessage && (
+              <p className="mt-4 text-center text-sm text-yellow-300">{statusMessage}</p>
+            )}
           </div>
         </div>
       </div>

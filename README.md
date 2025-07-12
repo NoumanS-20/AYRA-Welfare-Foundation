@@ -199,7 +199,7 @@ We welcome contributions to improve the AYRA Foundation website! Here's how you 
 - **Email**: ayrawelfarefoundation@gmail.com
 - **Phone**: 7007815129
 - **Address**: Lucknow
-- **Social**: @ayrwelfarefoundation
+- **Social**: @ayrawelfarefoundation
 
 ### Technical Support
 For website issues or feature requests, please:
