@@ -19,9 +19,9 @@ const Contact = () => {
       return;
     }
 
-    const serviceID = 'YOUR_EMAILJS_SERVICE_ID';
-    const templateID = 'YOUR_EMAILJS_TEMPLATE_ID';
-    const userID = 'YOUR_EMAILJS_USER_ID';
+    const serviceID = 'service_x6992lq';
+    const templateID = 'template_hsv6dmr';
+    const userID = 'OlIOpd5MF4XjaYNyX';
 
     send(serviceID, templateID, formData, userID)
       .then(() => {
